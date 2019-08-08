@@ -18,12 +18,14 @@ for v0 in v0_list: # Calculate trajectory for every initial velocity
         x1.append(x)
         y1.append(y)
         
-    # Remove y values lower than 0
-    p = [i for i, j in enumerate(y1) if j < 0]                      
+    # Remove negative y values
+    p = [i for i, j in enumerate(y1) if j < 0]                         
     for i in sorted(p, reverse = True):
         del x1[i]
         del y1[i]
 
-    plt.plot(x1, y1)
+    plt.plot(x1, y1, label = 'V0 = {}'.format(v0))
 
+
+plt.legend()
 plt.show()
