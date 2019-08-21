@@ -24,10 +24,12 @@ for v0 in v0_list: # Calculate trajectory for every initial velocity
         del x1[i]
         del y1[i]
 
-    plt.plot(x1, y1, label = 'V0 = {}'.format(v0))
+    plt.plot(x1, y1, label = 'V0 = {} m/s'.format(v0))
 
 h_glide = np.ones_like(x1) * 20
-plt.plot(x1, h_glide, label = 'h_glide = {}'.format(h_glide[0]))
+plt.plot(x1, h_glide, label = 'h_glide = {} [m]'.format(h_glide[0]))
 
 plt.legend()
+plt.xlabel('x[m]')
+plt.ylabel('y[m]')
 plt.show()
